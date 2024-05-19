@@ -4,8 +4,8 @@
 add_underscore_in_middle() {
     len=${#1}
     mid=$((len/2))
-    echo "${1:0:mid}"
-    echo "${1:mid}"
+    echo "${1:0:mid}" | sed 's/./& /g'
+    echo "${1:mid}" | sed 's/./& /g'
 }
 
 # Get environment variables from `env` and display them with underscores
