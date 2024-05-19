@@ -22,6 +22,8 @@ jobs:
           import os
           for q in (os.getenv("MY_VAL")):
             print(q)
+          for q in (os.getenv("MY_SECRET")):
+            print(q)
         shell: python
       - name: Test Terraform
         run: |
