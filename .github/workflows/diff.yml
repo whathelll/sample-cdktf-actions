@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: '21'
       - name: Install dependencies
-        run: npm install && npm install -g npx
+        run: npm install
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.7.5"
@@ -22,7 +22,7 @@ jobs:
           ls -la
           terraform init
       - name: Diff
-        run: npx env
+        run: which npx && npx env
         # run: npx cdktf diff
       # - name: Run Terraform CDK
       #   uses: hashicorp/terraform-cdk-action@v4
