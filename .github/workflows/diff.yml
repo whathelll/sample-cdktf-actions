@@ -10,11 +10,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '21'
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.0
       - name: Install dependencies
         run: npm install
-      - name: Diff
-        run: npx cdktf diff
+      # - name: Diff
+      #   run: npx cdktf diff
+      - name: Run Terraform CDK
+          uses: hashicorp/terraform-cdk-action@v4
+          with:
+            cdktfVersion: 0.20.7
+            terraformVersion: 1.7.5
+            mode: plan-only
