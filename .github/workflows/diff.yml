@@ -19,4 +19,4 @@ jobs:
         with:
           cdktfVersion: 0.20.7
           terraformVersion: 1.7.5
-          mode: plan-only
+          mode: synth-only
