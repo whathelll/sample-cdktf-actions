@@ -15,6 +15,12 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.7.5"
+      - name: Test Terraform
+        run: |
+          terraform --version
+          pwd
+          ls -la
+          terraform init
       - name: Diff
         run: npx cdktf diff
       # - name: Run Terraform CDK
