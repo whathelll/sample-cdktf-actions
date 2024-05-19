@@ -22,7 +22,8 @@ jobs:
           ls -la
           terraform init
       - name: Diff
-        run: npx cdktf diff
+        run: npx terraform --version && env
+        # run: npx cdktf diff
       # - name: Run Terraform CDK
       #   uses: hashicorp/terraform-cdk-action@v4
       #   with:
