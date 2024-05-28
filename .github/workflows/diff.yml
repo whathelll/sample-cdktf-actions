@@ -5,6 +5,8 @@ jobs:
   diff:
     runs-on: ubuntu-latest
     steps:
+      - name: ls
+        run: ls -la
       - uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -21,8 +23,6 @@ jobs:
         run: |
           import os
           for q in (os.getenv("MY_VAL")):
-            print(q)
-          for q in (os.getenv("MY_SECRET")):
             print(q)
         shell: python
       - name: Test Terraform
